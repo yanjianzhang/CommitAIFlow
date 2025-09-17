@@ -1,0 +1,51 @@
+{
+  "name": "commitaiflow",
+  "displayName": "CommitAIFlow",
+  "description": "AI-driven atomic commits + visual Git flow inside VS Code.",
+  "version": "0.0.1",
+  "publisher": "your-name",
+  "engines": {
+    "vscode": "^1.88.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onCommand:commitaiflow.startOllama",
+    "onCommand:commitaiflow.showGitGraph",
+    "onCommand:commitaiflow.planAtomicCommits"
+  ],
+  "main": "./out/extension.js",
+  "icon": "images/commitaiflow-icon-scaled-256.png",
+  "contributes": {
+    "commands": [
+      {
+        "command": "commitaiflow.startOllama",
+        "title": "CommitAIFlow: Start/Check Ollama"
+      },
+      {
+        "command": "commitaiflow.showGitGraph",
+        "title": "CommitAIFlow: Show Git Commit Flow Graph"
+      },
+      {
+        "command": "commitaiflow.planAtomicCommits",
+        "title": "CommitAIFlow: Plan Atomic Commits"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -w -p ./",
+    "test": "node ./out/test/runTest.js",
+    "vscode:prepublish": "npm run compile",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "@types/vscode": "^1.88.0",
+    "@vscode/test-electron": "^2.4.0",
+    "@vscode/vsce": "^3.0.0",
+    "typescript": "^5.4.0"
+  }
+}

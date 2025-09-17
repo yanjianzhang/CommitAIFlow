@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0A84FF"/>
+      <stop offset="100%" stop-color="#30D5C8"/>
+    </linearGradient>
+  </defs>
+  <!-- background -->
+  <rect x="0" y="0" width="256" height="256" rx="48" ry="48" fill="#0b1220"/>
+  <!-- scaled group (1.2x) centered -->
+  <g transform="translate(128,128) scale(1.2) translate(-128,-128)">
+    <!-- flow arrow -->
+    <path d="M48,176 C110,160 134,120 160,96 L150,88 L192,80 L184,120 L176,110 C150,136 122,180 56,192" 
+          fill="none" stroke="url(#g)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- commit node -->
+    <circle cx="128" cy="128" r="36" fill="#101a33" stroke="url(#g)" stroke-width="6"/>
+    <!-- AI letters -->
+    <text x="128" y="134" text-anchor="middle" font-family="Inter,Segoe UI,Arial" font-size="28" font-weight="700" fill="#8EF0E0">AI</text>
+  </g>
+</svg>
