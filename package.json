@@ -15,7 +15,9 @@
     "onCommand:commitaiflow.startOllama",
     "onCommand:commitaiflow.showGitGraph",
     "onCommand:commitaiflow.planAtomicCommits",
-    "onView:commitaiflow-gitgraph"
+    "onView:commitaiflow-actions",
+    "onCommand:commitaiflow.generateCommitMessageToScm",
+    "onCommand:commitaiflow.previewStagedDiff"
   ],
   "main": "./out/extension.js",
   "icon": "images/commitaiflow-icon-scaled-256.png",
@@ -32,6 +34,22 @@
       {
         "command": "commitaiflow.planAtomicCommits",
         "title": "CommitAIFlow: Plan Atomic Commits"
+      },
+      {
+        "command": "commitaiflow.generateCommitMessageToScm",
+        "title": "CommitAIFlow: Generate Commit Message (SCM Input)"
+      },
+      {
+        "command": "commitaiflow.previewStagedDiff",
+        "title": "CommitAIFlow: Preview Staged Diff (Text)"
+      },
+      {
+        "command": "commitaiflow.openSandboxFolder",
+        "title": "CommitAIFlow: Open Sandbox Repo"
+      },
+      {
+        "command": "commitaiflow.refreshSandboxChange",
+        "title": "CommitAIFlow: Stage New Sandbox Change"
       }
     ],
     "viewsContainers": {
@@ -46,9 +64,8 @@
     "views": {
       "commitaiflow-gitflow": [
         {
-          "id": "commitaiflow-gitgraph",
-          "name": "Git Commit Flow",
-          "type": "webview"
+          "id": "commitaiflow-actions",
+          "name": "Commit Flow Actions"
         }
       ]
     }

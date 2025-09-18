@@ -10,6 +10,7 @@ package-lock.json
 out/
 dist/
 coverage/
+sandbox-repo/
 *.vsix
 
 # VS Code test harness

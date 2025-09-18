@@ -47,12 +47,18 @@ export async function hasStagedChanges(cwd: string): Promise<boolean> {
     return false;
   } catch (error) {
     const err = error as NodeJS.ErrnoException;
-    // git diff --cached --quiet exits with 1 when there are staged changes
-    if (typeof err.code === 'number' && err.code === 1) {
+    // git diff --cached --quiet exits with code 1 when staging area is non-empty
+    const code = typeof err.code === 'number'
+      ? err.code
+      : typeof err.code === 'string'
+        ? Number(err.code)
+        : undefined;
+    const exitCode = typeof (err as any).exitCode === 'number' ? (err as any).exitCode : undefined;
+    if (code === 1 || exitCode === 1) {
       return true;
     }
     const message = (err.message || '').trim();
-    if (message.includes('exit code 1')) {
+    if (message.includes('exit code 1') || message.startsWith('Command failed: git diff --cached --quiet')) {
       return true;
     }
     if (message.toLowerCase().includes('not a git repository')) {
