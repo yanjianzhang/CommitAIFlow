@@ -2,7 +2,7 @@
   "name": "commitaiflow",
   "displayName": "CommitAIFlow",
   "description": "AI-driven atomic commits + visual Git flow inside VS Code.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "yanjianzhang",
   "license": "Apache-2.0",
   "engines": {
