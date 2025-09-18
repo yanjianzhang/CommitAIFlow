@@ -2,19 +2,19 @@ name: Release VSIX
 
 on:
   push:
-    tags: ['v*.*.*']   # trigger when a new semver tag is pushed
-  workflow_dispatch:    # allow manual run (choose a tag below)
+    tags: ['v*.*.*']
+  workflow_dispatch: {}
 
 jobs:
   release:
     runs-on: ubuntu-latest
     permissions:
-      contents: write          # REQUIRED to create/upload releases
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0       # get tags
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -30,9 +30,17 @@ jobs:
       - name: Package VSIX
         run: npx --yes @vscode/vsce package --no-yarn
 
+      # 👇 sanity: confirm VSIX exists in workspace root
+      - name: List vsix
+        run: |
+          pwd
+          ls -lah
+          ls -lah *.vsix || true
+
       - name: Create GitHub Release & upload VSIX
         uses: softprops/action-gh-release@v2
         with:
-          files: "*.vsix"
+          tag_name: ${{ github.ref_name }}
+          name: ${{ github.ref_name }}
+          files: "commitaiflow-*.vsix"
           generate_release_notes: true
-          # If you run manually, this will use the ref/tag of the run automatically.
