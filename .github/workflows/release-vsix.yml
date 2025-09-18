@@ -2,18 +2,22 @@ name: Release VSIX
 
 on:
   push:
-    tags:
-      - 'v*.*.*'   # 例如 v0.0.1
+    tags: ['v*.*.*']   # trigger when a new semver tag is pushed
+  workflow_dispatch:    # allow manual run (choose a tag below)
 
 jobs:
   release:
     runs-on: ubuntu-latest
     permissions:
-      contents: write   # 允许创建 Release 并上传资源
+      contents: write          # REQUIRED to create/upload releases
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0       # get tags
 
-      - uses: actions/setup-node@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
 
@@ -24,11 +28,11 @@ jobs:
         run: npm run compile
 
       - name: Package VSIX
-        run: npx vsce package --no-yarn
+        run: npx --yes @vscode/vsce package --no-yarn
 
       - name: Create GitHub Release & upload VSIX
         uses: softprops/action-gh-release@v2
         with:
           files: "*.vsix"
-          draft: false
-          prerelease: false
+          generate_release_notes: true
+          # If you run manually, this will use the ref/tag of the run automatically.
