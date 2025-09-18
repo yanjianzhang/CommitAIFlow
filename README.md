@@ -8,8 +8,7 @@
 
 ---
 
-CommitAIFlow uses AI to automatically **analyze code changes**,  
-propose meaningful **atomic commit splits**, and generate **clear commit messages**.  
+CommitAIFlow uses AI to automatically **analyze code changes**, propose meaningful **atomic commit splits**, and generate **clear commit messages**.  
 It helps developers keep a readable Git history while reducing the manual effort of writing and organizing commits.
 
 ## 📋 Feature List
