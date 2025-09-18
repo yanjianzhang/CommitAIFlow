@@ -6,8 +6,8 @@
       <stop offset="100%" stop-color="#30D5C8"/>
     </linearGradient>
   </defs>
-  <!-- background -->
-  <rect x="0" y="0" width="256" height="256" rx="48" ry="48" fill="#0b1220"/>
+  <!-- background (adjusted from #0b1220 to deep navy #101b2d) -->
+  <rect x="0" y="0" width="256" height="256" rx="48" ry="48" fill="#101b2d"/>
   <!-- scaled group (1.2x) centered -->
   <g transform="translate(128,128) scale(1.2) translate(-128,-128)">
     <!-- flow arrow -->
@@ -16,6 +16,6 @@
     <!-- commit node -->
     <circle cx="128" cy="128" r="36" fill="#101a33" stroke="url(#g)" stroke-width="6"/>
     <!-- AI letters -->
-    <text x="128" y="134" text-anchor="middle" font-family="Inter,Segoe UI,Arial" font-size="28" font-weight="700" fill="#8EF0E0">AI</text>
+    <text x="128" y="137" text-anchor="middle" font-family="Inter,Segoe UI,Arial" font-size="28" font-weight="700" fill="#8EF0E0">AI</text>
   </g>
 </svg>

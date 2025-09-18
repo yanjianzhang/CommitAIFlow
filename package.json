@@ -14,7 +14,8 @@
     "onStartupFinished",
     "onCommand:commitaiflow.startOllama",
     "onCommand:commitaiflow.showGitGraph",
-    "onCommand:commitaiflow.planAtomicCommits"
+    "onCommand:commitaiflow.planAtomicCommits",
+    "onView:commitaiflow-gitgraph"
   ],
   "main": "./out/extension.js",
   "icon": "images/commitaiflow-icon-scaled-256.png",
@@ -32,7 +33,25 @@
         "command": "commitaiflow.planAtomicCommits",
         "title": "CommitAIFlow: Plan Atomic Commits"
       }
-    ]
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "commitaiflow-gitflow",
+          "title": "CommitAIFlow",
+          "icon": "images/commitaiflow-activitybar.svg"
+        }
+      ]
+    },
+    "views": {
+      "commitaiflow-gitflow": [
+        {
+          "id": "commitaiflow-gitgraph",
+          "name": "Git Commit Flow",
+          "type": "webview"
+        }
+      ]
+    }
   },
   "scripts": {
     "compile": "tsc -p ./",
