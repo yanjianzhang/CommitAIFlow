@@ -3,12 +3,23 @@
   "displayName": "CommitAIFlow",
   "description": "AI-driven atomic commits + visual Git flow inside VS Code.",
   "version": "0.0.1",
-  "publisher": "your-name",
+  "publisher": "yanjianzhang",
+  "license": "Apache-2.0",
   "engines": {
     "vscode": "^1.88.0"
   },
   "categories": [
+    "SCM",
     "Other"
+  ],
+  "keywords": [
+    "git",
+    "commit",
+    "ai",
+    "ollama",
+    "atomic",
+    "history",
+    "flow"
   ],
   "activationEvents": [
     "onStartupFinished",
@@ -21,6 +32,18 @@
   ],
   "main": "./out/extension.js",
   "icon": "images/commitaiflow-icon-scaled-256.png",
+  "galleryBanner": {
+    "color": "#101b2d",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yanjianzhang/CommitAIFlow"
+  },
+  "homepage": "https://github.com/yanjianzhang/CommitAIFlow",
+  "bugs": {
+    "url": "https://github.com/yanjianzhang/CommitAIFlow/issues"
+  },
   "contributes": {
     "commands": [
       {

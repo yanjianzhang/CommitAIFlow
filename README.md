@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="images/commitaiflow-icon-scaled.svg" alt="CommitAIFlow Logo" width="120"/>
+  <img src="images/commitaiflow-icon-scaled-256.png" alt="CommitAIFlow Logo" width="120"/>
 </p>
 
 # CommitAIFlow
